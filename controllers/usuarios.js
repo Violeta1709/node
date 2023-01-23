@@ -1,17 +1,26 @@
+
 const { response, request} = require('express');
+const { SCHEMA } = require('sqlite3');
+const {Connection} = require('../database/db')
+const respuesta = require('../database/db')
 
-const usuariosGet = (req = request, res = response) => {
-const query = req.query;
+const usuariosGet =  (req = request, res = response) => {
+ 
+    const control = respuesta;
+    
+    res.send(console.log(control))
+    
+
+    
+
+} 
 
 
-    res.json({
-        msg:'get API -controlador', query
-    })
-}
-
-const usuariosPost = (req, res = response) => {
+const  usuariosPost  = (req, res = response) => {
 
 const body = req.body;
+
+
 
     res.json({
         msg:'Post API -controlador', body
