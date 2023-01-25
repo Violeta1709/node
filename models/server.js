@@ -1,6 +1,6 @@
 const express = require('express')
  const cors = require('cors');
-
+const Persona = require('../models/persona');
 
 class Server{
 
@@ -47,8 +47,11 @@ this.app.use(express.static('public'));
     this.app.listen(this.port, ()=>{
         console.log('servidor corriendo en puerto', this.port);
     })               
-}
 
 }
+
+
+}
+
 
 module.exports = Server;

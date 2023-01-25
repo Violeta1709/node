@@ -1,16 +1,23 @@
 
 const { response, request} = require('express');
 
-const {db} = require('../database/db')
 
 
 
-const usuariosGet =    (req = request, res = response) => {
+
+const Usuario = require('../models/usuario');
+
+
+
+const usuariosGet =  async  (req = request, res = response) => {
  
-   const consulta =  db;
-   console.log(consulta)
-res.json({consulta});
+   const usuario =  await Usuario.findAll({
+     
+   });
 
+res.json({
+usuario
+});
 
 } 
 
