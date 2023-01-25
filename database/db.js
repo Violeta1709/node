@@ -1,5 +1,3 @@
- 
-
 const mysql = require("mysql");
   
 let Connection  = mysql.createConnection({
@@ -9,24 +7,20 @@ let Connection  = mysql.createConnection({
     database: 'calculadora',
 });
   
-Connection.connect((err) => {
+Connection.connect ((err) => {
     if (err) {
-      console.log("La base de datos no se logro conectar !!!", err);
+      console.log("La base de datos no se logro conectar !!!");
     } else {
       console.log("la base de datos se ha conectado existosamente");
     }
 });
- 
-Connection.query('SELECT * FROM usuarios', function (error, results, fields) {
-    if (error)
-        throw error;
+ const prueba = Connection.query('SELECT * FROM usuarios'
+, function  (error, results, fields) {
+    if (error)throw error;
+        console.log(results);
 
-    results.forEach(result => {
-        console.log(result);
     });
-});
 
-  
 
 
 
@@ -34,5 +28,5 @@ Connection.end();
 
 
 module.exports = {
-    Connection
+    Connection, prueba
 }

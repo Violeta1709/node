@@ -1,17 +1,16 @@
 
 const { response, request} = require('express');
-const { SCHEMA } = require('sqlite3');
-const {Connection} = require('../database/db')
-const respuesta = require('../database/db')
 
-const usuariosGet =  (req = request, res = response) => {
+const {db} = require('../database/db')
+
+
+
+const usuariosGet =    (req = request, res = response) => {
  
-    const control = respuesta;
-    
-    res.send(console.log(control))
-    
+   const consulta =  db;
+   console.log(consulta)
+res.json({consulta});
 
-    
 
 } 
 
